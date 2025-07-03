@@ -1,0 +1,337 @@
+/* ---------------- Base Header ---------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e1e5e8;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.site-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-text .home {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #924213;
+  text-decoration: none;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* ---------------- Navigation ---------------- */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+  padding-left: 0;
+  margin: 0;
+}
+
+.navitem .navlink {
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.navitem .navlink.active {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #924213;
+}
+
+.navitem .navlink:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #924213;
+}
+
+
+/* ---------------- Responsive: Tablets & Below ---------------- */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .header-title {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-wrapper {
+    width: 100%;
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  .nav-wrapper.open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .navitem {
+    width: 100%;
+  }
+
+  .navitem .navlink {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* ---------------- Extra Small Devices (Phones) ---------------- */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.8rem 1rem;
+  }
+
+  .site-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .title-text .home {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .navitem .navlink {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+/* =================== Base Header =================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e1e5e8;
+  padding: 0.75rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* =================== Left Logo + Title =================== */
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.site-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title-text .home {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #924213;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* =================== Mobile Toggle =================== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* =================== Navigation =================== */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navitem .navlink {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  color: #333;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.navitem .navlink.active {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #924213;
+}
+
+.navitem .navlink:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #924213;
+}
+
+/* =================== Responsive: Tablets =================== */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .header-title {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-wrapper {
+    display: none;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-wrapper.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .navitem .navlink {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* =================== Responsive: Phones =================== */
+@media (max-width: 480px) {
+  .site-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title-text .home {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .navitem .navlink {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .header-title {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .header {
+    padding: 0.6rem 1rem;
+  }
+}
+

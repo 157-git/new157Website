@@ -1,0 +1,131 @@
+.test1 {
+  background-color: #bd5e26;
+}
+
+/* Heading */
+.imageheading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #070707;
+  background-color: #bd5e26; 
+  padding-top: 25px;
+  letter-spacing: 1px;
+}
+
+/* Responsive Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card styles */
+.image-card {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.8s ease forwards;
+  margin: 0 auto;
+}
+
+/* Rotating image */
+.image-card img.rotate {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* animation: rotateOneByOne 4s linear infinite; */
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: #f8f9fa;
+  color: #333;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.image-card:hover .overlay {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes rotateOneByOne {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .imageheading {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 16px;
+  }
+
+  .gallery-grid {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .imageheading {
+    font-size: 1.8rem;
+    margin-top: 25px;
+    margin-bottom: 14px;
+  }
+
+  .gallery-grid {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .overlay {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageheading {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .overlay {
+    font-size: 13px;
+  }
+}

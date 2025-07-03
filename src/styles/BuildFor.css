@@ -1,0 +1,126 @@
+.buildfor {
+  scroll-margin-top: 80px;
+  background-color: #888787;
+  /* Light neutral background */
+  padding: 80px 20px;
+}
+
+.buildfor-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #924213;
+  /* Brown accent */
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Scroll wrapper setup */
+.buildfor-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track for scrolling cards */
+.buildfor-scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+  gap: 24px;
+  padding-left: 10px;
+}
+
+/* Individual card styling */
+.buildfor-card {
+  background-color: #ffffff;
+  /* border: 2px solid #4c5a67; */
+  /* Grey border */
+  border-radius: 12px;
+  padding: 30px 40px;
+  width: 240px;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(150, 143, 143, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.buildfor-card:hover {
+  /* transform: translateY(-8px); */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Text inside each card */
+.buildfor-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  /* Black text */
+  text-align: center;
+
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+
+  line-height: 1.4;
+  padding: 0 5px;
+}
+
+/* Scroll animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .buildfor-title {
+    font-size: 30px;
+  }
+
+  .buildfor-card {
+    min-width: 200px;
+    padding: 24px 30px;
+  }
+
+  .buildfor-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buildfor-title {
+    font-size: 26px;
+  }
+
+  .buildfor-card {
+    min-width: 180px;
+    padding: 20px;
+  }
+
+  .buildfor-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buildfor-title {
+    font-size: 22px;
+  }
+
+  .buildfor-card {
+    min-width: 160px;
+    padding: 16px;
+  }
+
+  .buildfor-text {
+    font-size: 14px;
+  }
+}

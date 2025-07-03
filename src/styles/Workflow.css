@@ -1,0 +1,153 @@
+/* ========== Root Container ========== */
+.step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #888787;
+}
+
+.workflow-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #924213;
+  text-align: center;
+}
+
+/* ========== Row of Steps ========== */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ========== Arrow Between Rows ========== */
+.row.down-arrow {
+  justify-content: center;
+  /* width: 100%; */
+  /* border: 2px solid #924213; */
+  padding: 0rem;
+  border-radius: 10px;
+  margin-left: 510px;
+  margin-bottom: -25px;
+  margin-top: -25px;
+}
+
+.row.down-arrow-left {
+  justify-content: center;
+  /* width: 100%; */
+  /* border: 2px solid #924213; */
+  padding: 0rem;
+  border-radius: 10px;
+  margin-right: 510px;
+  margin-bottom: -25px;
+    margin-top: -25px;
+}
+
+.arrow-down {
+  font-size: 50px;
+  color: #070707;
+  /* border:none; */
+}
+
+/* ========== Step Boxes & Arrows ========== */
+.box {
+  width: 175px;
+  height: 80px;
+  padding: 0.1rem;
+  background-color: #ebecee;
+  border: 2px solid #0e0e0f;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: break-word;
+  box-sizing: border-box;
+  color:#924213;
+}
+
+
+
+.arrow {
+  font-size: 50px;
+  color: #131212;
+  transition: transform 0.3s ease;
+  border: none;
+}
+
+/* ========== Responsive: Tablets ========== */
+@media (max-width: 1024px) {
+  .box {
+    font-size: 16px;
+    width: 70px;
+    height: 45px;
+  }
+
+  .arrow {
+    font-size: 22px;
+  }
+
+  .arrow-down {
+    font-size: 24px;
+  }
+}
+
+/* ========== Responsive: Phones ========== */
+@media (max-width: 768px) {
+  .row,
+  .row.reverse {
+    flex-direction: column !important;
+  }
+
+  .arrow {
+    transform: rotate(90deg); /* Turn → into ↓ */
+  }
+
+  .arrow-down {
+    transform: rotate(0deg);
+    font-size: 22px;
+  }
+
+  .box {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .row.down-arrow {
+    width: auto;
+    padding: 0.4rem 0.8rem;
+    border-width: 1.5px;
+  }
+}
+
+/* ========== Extra Small Phones ========== */
+@media (max-width: 480px) {
+  .workflow-title {
+    font-size: 1.5rem;
+  }
+
+  .box {
+    font-size: 15px;
+    height: 42px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+
+  .arrow-down {
+    font-size: 20px;
+  }
+}

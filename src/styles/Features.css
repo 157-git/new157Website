@@ -1,0 +1,267 @@
+/* Root section */
+.features {
+  padding: 3rem 1rem;
+  background-color: #bd5e26;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+
+}
+
+/* Scroll Container */
+.scrollcontainer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 2rem;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+/* Scroll Buttons */
+.scroll-btn,
+.scrollbutton {
+  background-color: #4c5a67;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+
+.scroll-btn:hover,
+.scrollbutton:hover {
+  background-color: #924213;
+}
+
+/* Icon List Container */
+.icon-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 1rem 0;
+  scrollbar-width: none;
+
+}
+
+/* Single Icon Item */
+.iconitem {
+  /* min-width: 200px;
+  max-width: 200px;
+  background: transparent; */
+  /* border: 2px solid #4c5a67; */
+  /* border-radius: 10px;
+  text-align: center;
+  font-size: 0.75rem; */
+  /* padding: 1rem 1rem 0.5rem 1rem; */
+  /* cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  word-break: break-word;
+  overflow-wrap: break-word; */
+  /* white-space: normal; */
+
+   min-width: 200px;
+  max-width: 200px;
+  height: 200px; /* ✅ This is the key line */
+  background: transparent;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+
+.icon-list::-webkit-scrollbar {
+  display: none;
+}
+
+.iconitem:hover {
+  transform: translateY(-4px);
+  background-color: #f7f7f7;
+}
+
+.iconitem p {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* Spinner (on hover) */
+.spinnerborder {
+  width: 2rem;
+  height: 2rem;
+  border: 0.25rem solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Video and Info Section */
+.videoinfocontainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.alignitemscenter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Video */
+.video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Text */
+.info {
+  flex: 1;
+}
+
+.info h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+
+}
+
+.info p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #1b1a1a;
+}
+
+.feature-icon {
+ position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ Ensures it fills while maintaining aspect ratio */
+  z-index: 1;
+  z-index: 1;
+}
+
+.feature-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.feature-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  color:white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px;
+  box-shadow: #130f0f;
+}
+
+
+/* Responsive Breakpoints */
+
+@media (max-width: 1024px) {
+  .scrollcontainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .scroll-btn,
+  .scrollbutton {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .iconitem {
+    min-width: 160px;
+    padding: 1rem;
+  }
+
+  .info h4 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .info p {
+    text-align: center;
+  }
+
+  .alignitemscenter {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .features h2 {
+    font-size: 1.6rem;
+  }
+
+  .iconitem {
+    min-width: 140px;
+    font-size: 14px;
+  }
+
+  .scrollcontainer {
+    padding: 0;
+  }
+}
