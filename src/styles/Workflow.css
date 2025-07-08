@@ -6,14 +6,17 @@
   padding: 2rem 1rem;
   gap: 2rem;
   width: 100%;
+
   box-sizing: border-box;
-  background-color: #888787;
+  background: linear-gradient(-50deg,
+        #888787 50%,
+        #bd5e26 50%);
 }
 
 .workflow-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #924213;
+  color: black;
   text-align: center;
 }
 
@@ -57,6 +60,7 @@
   font-size: 50px;
   color: #070707;
   /* border:none; */
+  pointer-events: none;
 }
 
 /* ========== Step Boxes & Arrows ========== */
@@ -65,7 +69,7 @@
   height: 80px;
   padding: 0.1rem;
   background-color: #ebecee;
-  border: 2px solid #0e0e0f;
+  /* border: 2px solid #0e0e0f; */
   border-radius: 50px;
   font-size: 1rem;
   font-weight: bold;
@@ -76,15 +80,92 @@
   word-break: break-word;
   box-sizing: border-box;
   color:#924213;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.box:hover {
+  background-color: #fcd34d;
+    color: #1e3a8a;
+    transform: scale(1.05);
+}
+
+.multi-tooltip {
+  position: relative;
+  cursor: pointer;
 }
 
 
+.multi-tooltip::before {
+  content: attr(data-top);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
 
+
+.multi-tooltip::after {
+  content: attr(data-left);
+  position: absolute;
+  top: 50%;
+  right: 110%;
+  transform: translateY(-50%);
+  background-color: #1f2937;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+
+.multi-tooltip .tooltip-bottom {
+  content: attr(data-bottom);
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Show All Tooltips on Hover */
+.multi-tooltip:hover::before,
+.multi-tooltip:hover::after,
+.multi-tooltip:hover .tooltip-bottom {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* .arrow has NO tooltip styling — so it won't trigger anything */
 .arrow {
   font-size: 50px;
   color: #131212;
-  transition: transform 0.3s ease;
   border: none;
+  pointer-events: none;
 }
 
 /* ========== Responsive: Tablets ========== */

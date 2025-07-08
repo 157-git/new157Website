@@ -1,4 +1,5 @@
 import ".././styles/About.css";
+import office from '../assets/aboutTeam/office.jpg';
 
 export default function About() {
   return (
@@ -24,9 +25,9 @@ export default function About() {
     <div className="team-right">
       {[
         {
-          role: "TEAM LEADER",
-          name: "Jacob Fitzgerald",
-          img: "https://randomuser.me/api/portraits/men/45.jpg",
+          role: "SOFTWARE TEST ENGINEER",
+          name: "SINGH AMEET UPENDRA",
+          img: office,
         },
         {
           role: "PROGRAMMING",

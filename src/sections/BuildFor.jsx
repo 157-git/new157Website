@@ -12,7 +12,7 @@ const BuildFor = () => {
 
   return (
     <div className="section buildfor" id="buildfor">
-      <h2 className="buildfor-title">We Build For</h2>
+      <h2 className="buildfor-title">WE BUILD FOR</h2>
       <div className="buildfor-scroll-wrapper">
         <div className="buildfor-scroll-track">
           {cardItems.map((item, index) => (

@@ -118,7 +118,7 @@ export default function Features() {
 
   return (
     <section id="features" className="features">
-      <h2>Features</h2>
+      <h2>FEATURES</h2>
 
       {/* Scrollable Icon Area */}
       <div className="scrollcontainer">

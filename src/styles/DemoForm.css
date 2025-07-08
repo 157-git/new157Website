@@ -1,6 +1,8 @@
 .demo-section {
   padding: 60px 20px;
-  background-color: #888787;
+  background: linear-gradient(-45deg,
+        #888787 50%,
+        #bd5e26 50%);
 }
 
 .demo-container {
@@ -32,7 +34,7 @@
 
 .demo-title {
   font-size: 2rem;
-  color: #924213;
+  color: black;
   margin-bottom: 30px;
 }
 

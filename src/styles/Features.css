@@ -1,7 +1,10 @@
 /* Root section */
 .features {
   padding: 3rem 1rem;
-  background-color: #bd5e26;
+  background: linear-gradient(45deg,
+        #888787 50%,
+        #bd5e26 50%);
+margin: 50px auto;
 }
 
 .features h2 {

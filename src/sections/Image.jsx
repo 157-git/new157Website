@@ -15,7 +15,7 @@ export default function Image() {
   return (
     <div className="test1">
       <div className="imageheading">
-        What Is Coming Next
+        WHAT IS COMING NEXT
       </div>
       <div className="gallery-grid">
         {images.map((image, index) => (

@@ -58,7 +58,7 @@ const WhyWeAre = () => {
 
   return (
     <div className="section section-blue whyweare" id="whyweare">
-      <h2 className="whyweare-title">Why We Are Different</h2>
+      <h2 className="whyweare-title">WHY WE ARE DIFFERENT</h2>
 
       <div className="whyweare-carousel-wrapper">
         <button className="whyweare-arrow left" onClick={() => scroll("left")}>

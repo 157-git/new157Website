@@ -1,5 +1,8 @@
-.test1 {
-  background-color: #bd5e26;
+.test1 {      
+margin: 50px auto;
+/* padding: 20px; */
+height: 80vh;
+background: linear-gradient(43deg,#888787 50%,#bd5e26 50%);
 }
 
 /* Heading */

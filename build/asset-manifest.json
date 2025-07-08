@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.094eb08b.css",
+    "main.js": "/static/js/main.792855c1.js",
+    "static/media/scalable.jpg": "/static/media/scalable.43b0fc38580dc7a1e01f.jpg",
+    "static/media/agile.jpg": "/static/media/agile.314f388ce590d9549ee6.jpg",
+    "static/media/client.jpg": "/static/media/client.9ded22662bbcb642e65b.jpg",
+    "static/media/expert.jpg": "/static/media/expert.78343c93f8d60da5f570.jpg",
+    "static/media/delivery.jpg": "/static/media/delivery.ee55596e248e529230d9.jpg",
+    "static/media/multiplecolortheme.jpg": "/static/media/multiplecolortheme.b16544a17b4af366b38c.jpg",
+    "static/media/rgLogo.png": "/static/media/rgLogo.a66b5ad5c9ad55218ab0.png",
+    "static/media/candidatenotificationsystem.jpg": "/static/media/candidatenotificationsystem.8222d445289952af61fb.jpg",
+    "static/media/demo.jpg": "/static/media/demo.1e0ed71ef6bfc6ea4607.jpg",
+    "static/media/resumeparsing.jpg": "/static/media/resumeparsing.8aab99b3a56058fcd2c2.jpg",
+    "static/media/salaryhike.jpg": "/static/media/salaryhike.c18cd86eb336afd06023.jpg",
+    "static/media/recruiterperformanceandattendance.jpg": "/static/media/recruiterperformanceandattendance.c7e0f9b6d8354409d669.jpg",
+    "static/media/applicantform.jpg": "/static/media/applicantform.03839873d184c02fb61f.jpg",
+    "static/media/aiintegration.jpeg": "/static/media/aiintegration.56da28c0ec1cc769e66f.jpeg",
+    "static/media/distancecalculator.jpeg": "/static/media/distancecalculator.00234f2bf4555a4d5ebf.jpeg",
+    "static/media/jdcreation.jpeg": "/static/media/jdcreation.ae860919e4ff36caf668.jpeg",
+    "static/media/bulkexcelupload.jpeg": "/static/media/bulkexcelupload.ef6679ee823c89b1e2db.jpeg",
+    "static/media/vendor.jpeg": "/static/media/vendor.6153a161b1fcbf72e7d1.jpeg",
+    "static/media/clientmanagement.jpeg": "/static/media/clientmanagement.a59b012db2bfb4c4e9c8.jpeg",
+    "static/media/jobportal.jpeg": "/static/media/jobportal.c6330e4bbbb80bf9cdce.jpeg",
+    "index.html": "/index.html",
+    "main.094eb08b.css.map": "/static/css/main.094eb08b.css.map",
+    "main.792855c1.js.map": "/static/js/main.792855c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.094eb08b.css",
+    "static/js/main.792855c1.js"
+  ]
+}

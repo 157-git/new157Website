@@ -3,11 +3,14 @@ import "../styles/Workflow.css";
 const Workflow = () => {
   return (
     <div className="step-container">
-      <h2 className="workflow-title">Workflow</h2>
+      <h2 className="workflow-title">WORKFLOW</h2>
 
       {/* Row 1 */}
       <div className="row">
-        <div className="box right-tooltip" data-tooltip="Add Candidate Form\\Excel and Resume Upload\\Applicant form">Add Candidate</div>
+        <div className="box multi-tooltip" data-top="Add Candidate Form" data-left="Excel and Resume Upload">
+          Add Candidate
+          <div className="tooltip-bottom">Applicant Form</div>
+        </div>
         <div className="arrow">→</div>
         <div className="box">Calling Tracker</div>
         <div className="arrow">→</div>
@@ -23,7 +26,12 @@ const Workflow = () => {
       <div className="row reverse">
         <div className="box">Interview Feedback</div>
         <div className="arrow">←</div>
-        <div className="box">Shortlisted</div>
+
+        <div className="box multi-tooltip" data-top="Rejected ❌" data-left="Selected ✔" data-bottom="Hold ❌">
+            Shortlisted
+          <div className="tooltip-bottom">Hold ❌</div>
+        </div>
+
         <div className="arrow">←</div>
         <div className="box">Offer Letter</div>
       </div>

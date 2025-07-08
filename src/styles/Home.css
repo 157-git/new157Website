@@ -3,11 +3,13 @@
 /* ---------- Base Styles ---------- */
 .hero-section {
   padding: 4rem;
-  background-color: #888787;
+  background: linear-gradient(-55deg,
+        #888787 50%,
+        #bd5e26 50%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  height: 95vh;
   box-sizing: border-box;
 }
 
@@ -29,6 +31,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.description{
+  padding: 20px;
 }
 
 .hometext1{
