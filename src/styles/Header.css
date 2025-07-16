@@ -1,0 +1,204 @@
+/* =================== Base Header =================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0.75rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* =================== Left Logo + Title =================== */
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.site-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title-text .home {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8d4217;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+/* =================== Mobile Toggle =================== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* =================== Navigation =================== */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navitem .navlink {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  color: #333;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.navitem .navlink.active {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #924213;
+}
+
+.navitem .navlink:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #924213;
+}
+
+/* =================== Responsive: Tablets =================== */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .header-title {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-wrapper {
+    display: none;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-wrapper.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .navitem .navlink {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* =================== Responsive: Phones =================== */
+@media (max-width: 480px) {
+  .site-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title-text .home {
+    font-size: 1.2rem;
+    white-space: normal;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .navitem .navlink {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .header-title {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .header {
+    padding: 0.6rem 1rem;
+  }
+
+  .title-text {
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+
+/* ---------------- Extra Small Devices (320px and below) ---------------- */
+@media (max-width: 360px) {
+  .header {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .site-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title-text .home {
+    font-size: 1.1rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .navitem .navlink {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.5rem;
+  }
+}

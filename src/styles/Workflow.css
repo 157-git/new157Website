@@ -1,0 +1,235 @@
+/* ========== Root Container ========== */
+.step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.workflow-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* ========== Row of Steps ========== */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ========== Arrow Between Rows ========== */
+.row.down-arrow {
+  justify-content: center;
+  padding: 0rem;
+  border-radius: 10px;
+  margin-left: 510px;
+  margin-bottom: -25px;
+  margin-top: -25px;
+}
+
+.row.down-arrow-left {
+  justify-content: center;
+  padding: 0rem;
+  border-radius: 10px;
+  margin-right: 510px;
+  margin-bottom: -25px;
+  margin-top: -25px;
+}
+
+.arrow-down {
+  font-size: 50px;
+  color: #070707;
+  pointer-events: none;
+}
+
+/* ========== Step Boxes & Arrows ========== */
+.box {
+  width: 175px;
+  height: 80px;
+  padding: 0.1rem;
+  background-color: #ddc6b9;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: break-word;
+  box-sizing: border-box;
+  color: #924213;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.box:hover {
+  background-color: #fbf0e9;
+  color: #8d4217;
+  transform: scale(1.05);
+}
+
+.multi-tooltip {
+  position: relative;
+  cursor: pointer;
+  background-color: #ddc6b9;
+  color: #8d4217;
+}
+
+
+.multi-tooltip::before {
+  content: attr(data-top);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fbf0e9;
+  color: #8d4217;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+
+.multi-tooltip::after {
+  content: attr(data-left);
+  position: absolute;
+  top: 50%;
+  right: 110%;
+  transform: translateY(-50%);
+  background-color: #fbf0e9;
+  color: #8d4217;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+
+.multi-tooltip .tooltip-bottom {
+  content: attr(data-bottom);
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fbf0e9;
+  color: #8d4217;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Show All Tooltips on Hover */
+.multi-tooltip:hover::before,
+.multi-tooltip:hover::after,
+.multi-tooltip:hover .tooltip-bottom {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* .arrow has NO tooltip styling — so it won't trigger anything */
+.arrow {
+  font-size: 50px;
+  color: #131212;
+  border: none;
+  pointer-events: none;
+}
+
+/* ========== Responsive: Tablets ========== */
+@media (max-width: 1024px) {
+  .box {
+    font-size: 16px;
+    width: 70px;
+    height: 45px;
+  }
+
+  .arrow {
+    font-size: 22px;
+  }
+
+  .arrow-down {
+    font-size: 24px;
+  }
+}
+
+/* ========== Responsive: Phones ========== */
+@media (max-width: 768px) {
+
+  .row,
+  .row.reverse {
+    flex-direction: column !important;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+    /* Turn → into ↓ */
+  }
+
+  .arrow-down {
+    transform: rotate(0deg);
+    font-size: 22px;
+  }
+
+  .box {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .row.down-arrow {
+    width: auto;
+    padding: 0.4rem 0.8rem;
+    border-width: 1.5px;
+  }
+}
+
+/* ========== Extra Small Phones ========== */
+@media (max-width: 480px) {
+  .workflow-title {
+    font-size: 1.5rem;
+  }
+
+  .box {
+    font-size: 15px;
+    height: 42px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+
+  .arrow-down {
+    font-size: 20px;
+  }
+}

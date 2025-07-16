@@ -1,0 +1,140 @@
+/* Main container */
+.test1 {
+  background-color: #fbf0e9;
+  scroll-margin-top: 100px;
+  padding-bottom: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Heading */
+.imageheading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #070707;
+  padding-top: 40px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.image-card {
+  position: relative;
+  max-width: 280px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+/* Image */
+.image-card img.rotate {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.overlay.full.always-visible {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Default state */
+.overlay-text {
+  transform: translateY(100%);
+  opacity: 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Animation trigger */
+.overlay-text.scroll-in {
+  animation: scrollUp 1s ease forwards;
+}
+
+/* Keyframes */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .imageheading {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 16px;
+  }
+
+  .gallery-grid {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageheading {
+    font-size: 1.8rem;
+    margin-top: 25px;
+    margin-bottom: 14px;
+  }
+
+  .gallery-grid {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .overlay-text {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageheading {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .overlay-text {
+    font-size: 0.95rem;
+  }
+}
