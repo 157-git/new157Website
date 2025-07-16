@@ -7,7 +7,6 @@
   background-size: cover;
 }
 
-
 /* Heading */
 .imageheading {
   text-align: center;
@@ -19,7 +18,7 @@
   margin-bottom: 40px;
 }
 
-/* Grid */
+/* Grid Layout */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -29,9 +28,10 @@
   margin: 0 auto;
 }
 
-/* Cards */
+/* Image Cards */
 .image-card {
   position: relative;
+  width: 100%;
   max-width: 280px;
   height: 250px;
   overflow: hidden;
@@ -40,7 +40,7 @@
   margin: 0 auto;
 }
 
-/* Image */
+/* Image Styling */
 .image-card img.rotate {
   width: 100%;
   height: 100%;
@@ -61,7 +61,7 @@
   align-items: center;
 }
 
-/* Default state */
+/* Overlay Text */
 .overlay-text {
   transform: translateY(100%);
   opacity: 0;
@@ -73,68 +73,97 @@
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Animation trigger */
+/* Triggered Animation */
 .overlay-text.scroll-in {
   animation: scrollUp 1s ease forwards;
 }
 
-/* Keyframes */
+/* Animation */
 @keyframes scrollUp {
   0% {
     transform: translateY(100%);
     opacity: 0;
   }
-
   30% {
     opacity: 1;
   }
-
   100% {
     transform: translateY(0%);
     opacity: 1;
   }
 }
 
-/* Responsive */
+/* ========== Responsive ========== */
 @media (max-width: 1024px) {
   .imageheading {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-top: 30px;
     margin-bottom: 16px;
   }
 
   .gallery-grid {
     gap: 30px;
-    padding: 40px 20px;
+    padding: 50px 20px;
   }
 }
 
 @media (max-width: 768px) {
   .imageheading {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-top: 25px;
     margin-bottom: 14px;
   }
 
   .gallery-grid {
     gap: 20px;
-    padding: 30px 15px;
+    padding: 40px 15px;
   }
 
   .overlay-text {
     font-size: 1rem;
     padding: 8px;
   }
+
+  .image-card {
+    max-width: 240px;
+    height: 220px;
+  }
 }
 
 @media (max-width: 480px) {
   .imageheading {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-top: 20px;
     margin-bottom: 12px;
   }
 
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 30px 10px;
+  }
+
+  .image-card {
+    max-width: 200px;
+    height: 200px;
+  }
+
   .overlay-text {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .imageheading {
+    font-size: 1.3rem;
+  }
+
+  .overlay-text {
+    font-size: 0.9rem;
+  }
+
+  .image-card {
+    max-width: 180px;
+    height: 180px;
   }
 }

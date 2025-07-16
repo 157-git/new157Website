@@ -7,12 +7,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 html,
 body {
   overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -38,6 +41,7 @@ body {
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  overflow: hidden;
 }
 
 /* === Logo Animation & Effects === */
@@ -60,7 +64,7 @@ section {
 
   scroll-margin-top: 100px;
   /* helps align section after scroll */
-  min-height: 70vh;
+  min-height: 50vh;
   /* ensure visibility to IntersectionObserver */
 
 }

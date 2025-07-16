@@ -1,3 +1,4 @@
+/* ================= Base Styles ================= */
 .faq-wrapper {
   max-width: 1000px;
   margin: 20px auto;
@@ -34,7 +35,7 @@
   align-items: center;
   padding: 15px 20px;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #444;
 }
@@ -46,8 +47,9 @@
 .faq-icon {
   font-size: 20px;
   font-weight: bold;
+  color: #8d4217;
   transition: transform 0.2s ease;
-  color: #8d4217
+  margin-left: auto; /* keeps icon aligned right */
 }
 
 .faq-answer {
@@ -56,7 +58,7 @@
   color: #444;
   border-top: 1px solid #444;
   animation: fadeIn 0.3s ease-in-out;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 @keyframes fadeIn {
@@ -64,29 +66,34 @@
     opacity: 0;
     transform: translateY(-5px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-
-/* ========== Responsive Styles ========== */
+/* Large Tablets */
 @media (max-width: 1024px) {
   .faq-title {
-    font-size: 24px;
+    font-size: 1.4rem;
   }
 
   .faq-question {
     padding: 14px 16px;
+    font-size: 0.85rem;
   }
 
   .faq-answer {
     padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+
+  .faq-icon {
+    font-size: 18px;
   }
 }
 
+/* Tablets & Small Screens */
 @media (max-width: 768px) {
   .faq-wrapper {
     padding: 15px;
@@ -94,32 +101,43 @@
   }
 
   .faq-title {
-    font-size: 22px;
-  }
-
-  .faq-icon {
-    font-size: 18px;
+    font-size: 1.3rem;
   }
 
   .faq-question {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 14px;
+    font-size: 0.85rem;
+  }
+
+  .faq-answer {
+    padding: 14px;
+    font-size: 0.8rem;
   }
 }
 
+/* Phones */
 @media (max-width: 480px) {
+  .faq-wrapper {
+    padding: 12px;
+    margin: 25px 8px;
+  }
+
   .faq-title {
-    font-size: 2.5 rem;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
   }
 
   .faq-question {
     padding: 12px 14px;
-    font-size: 15px;
+    font-size: 0.8rem;
   }
 
   .faq-answer {
     padding: 12px 14px;
-    font-size: 14px;
+    font-size: 0.75rem;
+  }
+
+  .faq-icon {
+    font-size: 16px;
   }
 }

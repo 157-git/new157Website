@@ -3,7 +3,6 @@
   background-color: white;
 }
 
-
 .demo-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -100,5 +99,10 @@
   .demo-form-wrapper form button {
     font-size: 14px;
     padding: 10px 16px;
+  }
+
+  /* ❌ Hide the image wrapper on small screens */
+  .demo-image-wrapper {
+    display: none;
   }
 }

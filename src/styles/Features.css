@@ -1,8 +1,10 @@
+/* === Features Section Base === */
 .features {
   padding: 3rem 1rem;
   background-color: #fbf0e9;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .features h2 {
@@ -14,17 +16,20 @@
   letter-spacing: 1px;
 }
 
-/* ========== Scroll Container ========== */
+/* === Scroll Container === */
 .scrollcontainer {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
   margin: 0 auto 2rem;
-  max-width: 1200px;
+  max-width: 100%;
   padding: 0 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+/* === Scroll Buttons === */
 .scrollbutton {
   background-color: #4c5a67;
   color: white;
@@ -40,12 +45,7 @@
   background-color: #924213;
 }
 
-.scroll-spacer {
-  flex: 0 0 120px;
-  pointer-events: none;
-}
-
-/* ========== Icon List ========== */
+/* === Icon List === */
 .icon-list {
   display: flex;
   overflow-x: auto;
@@ -53,21 +53,17 @@
   gap: 23px;
   padding: 1rem 0;
   scrollbar-width: none;
-  position: relative;
   scroll-padding: 100px;
-}
-
-.icon-list::before,
-.icon-list::after {
-  content: "";
-  flex: 0 0 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-right: 10px;
 }
 
 .icon-list::-webkit-scrollbar {
   display: none;
 }
 
-/* ========== Icon Card ========== */
+/* === Icon Card === */
 .iconitem {
   min-width: 200px;
   max-width: 200px;
@@ -75,7 +71,7 @@
   border-radius: 10px;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
   flex-shrink: 0;
   color: #333;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
@@ -84,6 +80,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  box-sizing: border-box;
 }
 
 .iconitem:hover {
@@ -92,35 +89,12 @@
 }
 
 .iconitem.selected {
-  transform: scale(1.15);
+  transform: scale(1.05);
   z-index: 5;
-  position: relative;
+  margin-right: -10px;
 }
 
-.iconitem.selected .feature-label {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  font-size: 1.1rem;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: normal;
-  text-align: center;
-  word-break: break-word;
-  z-index: 2;
-  transition: all 0.3s ease;
-}
-
-.iconitem.selected .feature-icon {
-  filter: brightness(1);
-  z-index: 1;
-}
-
-/* ========== Card Inner Elements ========== */
+/* === Card Inner Elements === */
 .feature-icon {
   position: absolute;
   top: 0;
@@ -148,29 +122,43 @@
   font-weight: 600;
   text-align: center;
   padding: 8px;
-  box-shadow: #130f0f;
   transition: all 0.3s ease;
 }
 
-/* ========== Video & Description Section ========== */
+/* === Selected Card Label === */
+.iconitem.selected .feature-label {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  z-index: 2;
+}
+
+/* === Video & Description Container === */
 .videoinfocontainer {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* This keeps video + description in one row */
 .alignitemscenter {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: nowrap;
-  /* important: prevents wrapping */
+  flex-wrap: wrap;
 }
 
-/* 60% video area */
 .feature-video {
   flex: 0 0 60%;
   aspect-ratio: 16 / 9;
@@ -179,16 +167,14 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive iframe */
 .feature-video iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* 40% text area */
 .feature-description {
-  flex: 0 0 40%;
+  flex: 0 0 35%;
   padding: 1rem;
   text-align: left;
 }
@@ -206,7 +192,7 @@
   color: #1b1a1a;
 }
 
-/* ========== Responsive Styles ========== */
+/* === Responsive Fixes === */
 @media (max-width: 1024px) {
   .scrollcontainer {
     grid-template-columns: 1fr;
@@ -215,12 +201,6 @@
 
   .scrollbutton {
     display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .iconitem {
-    min-width: 160px;
   }
 
   .alignitemscenter {
@@ -236,6 +216,7 @@
 
   .feature-description {
     text-align: center;
+    padding-left: 0;
   }
 
   .feature-description h4,
@@ -244,21 +225,86 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .iconitem {
+    min-width: 160px;
+  }
+
   .features h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .videoinfocontainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .alignitemscenter {
+    gap: 1.5rem;
+  }
+
+  .feature-description h4 {
+    font-size: 1.3rem;
+  }
+
+  .feature-description p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: 2rem 0.5rem;
   }
 
   .iconitem {
-    min-width: 140px;
-    font-size: 14px;
+    min-width: 130px;
+    height: 180px;
+    font-size: 13px;
+    margin: 0 auto;
   }
 
-  .scrollcontainer {
-    padding: 0;
+  .videoinfocontainer {
+    padding: 1rem 0.5rem;
   }
 
-  .feature-video {
-    width: 100%;
+  .alignitemscenter {
+    gap: 1rem;
   }
+
+  .feature-description h4 {
+    font-size: 1.2rem;
+  }
+
+  .feature-description p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .features {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .features h2 {
+    font-size: 1.3rem;
+  }
+
+  .iconitem {
+    min-width: 120px;
+    height: 170px;
+  }
+
+  .feature-description h4 {
+    font-size: 1.1rem;
+  }
+
+  .feature-description p {
+    font-size: 0.85rem;
+  }
+}
+
+/* === Global Overflow Prevention === */
+html, body, #root {
+  max-width: 100vw;
+  overflow-x: hidden;
 }

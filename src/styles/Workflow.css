@@ -12,8 +12,6 @@
   background-size: cover;
 }
 
-
-
 .workflow-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -94,7 +92,6 @@
   color: #8d4217;
 }
 
-
 .multi-tooltip::before {
   content: attr(data-top);
   position: absolute;
@@ -112,7 +109,6 @@
   transition: opacity 0.3s ease;
   z-index: 10;
 }
-
 
 .multi-tooltip::after {
   content: attr(data-left);
@@ -132,7 +128,6 @@
   z-index: 10;
 }
 
-
 .multi-tooltip .tooltip-bottom {
   content: attr(data-bottom);
   position: absolute;
@@ -151,7 +146,6 @@
   z-index: 10;
 }
 
-/* Show All Tooltips on Hover */
 .multi-tooltip:hover::before,
 .multi-tooltip:hover::after,
 .multi-tooltip:hover .tooltip-bottom {
@@ -159,7 +153,6 @@
   visibility: visible;
 }
 
-/* .arrow has NO tooltip styling — so it won't trigger anything */
 .arrow {
   font-size: 50px;
   color: #131212;
@@ -186,15 +179,17 @@
 
 /* ========== Responsive: Phones ========== */
 @media (max-width: 768px) {
-
   .row,
   .row.reverse {
-    flex-direction: column !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
   }
 
   .arrow {
-    transform: rotate(90deg);
-    /* Turn → into ↓ */
+    font-size: 20px;
+    transform: rotate(0deg);
   }
 
   .arrow-down {
@@ -203,33 +198,65 @@
   }
 
   .box {
-    width: 100%;
-    max-width: 240px;
+    width: 140px;
+    max-width: 100%;
   }
 
-  .row.down-arrow {
-    width: auto;
-    padding: 0.4rem 0.8rem;
-    border-width: 1.5px;
+  .row.down-arrow,
+  .row.down-arrow-left {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 /* ========== Extra Small Phones ========== */
 @media (max-width: 480px) {
-  .workflow-title {
-    font-size: 1.5rem;
+  .step-container {
+    padding: 1rem;
   }
 
-  .box {
-    font-size: 15px;
-    height: 42px;
+  .workflow-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .row {
+    flex-wrap: nowrap;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0.5rem 0;
+  }
+
+  .row.reverse {
+    flex-direction: row-reverse !important;
   }
 
   .arrow {
     font-size: 20px;
+    transform: none;
   }
 
   .arrow-down {
-    font-size: 20px;
+    font-size: 22px;
+    transform: rotate(0deg);
+    margin: 0.5rem auto;
+  }
+
+  .row.down-arrow,
+  .row.down-arrow-left {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .box {
+    font-size: 14px;
+    width: 140px;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 1.2;
   }
 }
