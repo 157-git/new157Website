@@ -108,6 +108,9 @@
 }
 
 @media (max-width: 480px) {
+  .buildfor{
+    height: 50vh;
+  }
   .buildfor-title {
     font-size: 22px;
   }
@@ -115,6 +118,7 @@
   .buildfor-card {
     min-width: 160px;
     padding: 16px;
+    
   }
 
   .buildfor-text {
