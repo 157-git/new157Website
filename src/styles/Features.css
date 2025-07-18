@@ -231,7 +231,7 @@
 
 @media (max-width: 768px) {
   .iconitem {
-    min-width: 160px;
+    min-width: 165px;
   }
 
   .features h2 {
@@ -262,7 +262,7 @@
   }
 
   .iconitem {
-    min-width: 130px;
+    min-width: 165px;
     height: 180px;
     font-size: 13px;
     margin: 0 auto;
@@ -295,7 +295,7 @@
   }
 
   .iconitem {
-    min-width: 120px;
+    min-width: 165px;
     height: 170px;
   }
 
