@@ -1,3 +1,4 @@
+import React from 'react';
 import './styles/App.css';
 import Header from './components/Header/Header';
 import BuildFor from './sections/BuildFor';
@@ -11,51 +12,34 @@ import Workflow from './sections/Workflow';
 import Image from './sections/Image';
 import Faq from './sections/Faq';
 
+import { useEffect } from 'react';
+
 const App = () => {
-    return (
-        <>
-            <Header />
-            <section>
-                <Home />
-            </section>
-            <section>
-                <Features />
-            </section>
-            <section>
-                <BuildFor />
-            </section>
-            <section>
-                <WhyWeAre />
-            </section>
-            <section>
-                <Workflow />
-            </section>
-            <section>
-                <Image />
-            </section>
-            <section>
-                <DemoForm />
-            </section>
-            <section>
-                <Faq />
-            </section>
-            <section>
-                <About />
-            </section>
-            <section>
-                <Footer />
-            </section>
+
+  useEffect(() => {
+    // Scroll to top on page load
+    window.history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <Header />
+      <section id="home"><Home /></section>
+      <section id="features"><Features /></section>
+      <section id="WhoWeServe"><BuildFor /></section>
+      <section id="WhyUs"><WhyWeAre /></section>
+      <section id="workflow"><Workflow /></section>
+      <section id="image"><Image /></section>
+      <section id="requestdemo"><DemoForm /></section>
+      <section id="faq"><Faq /></section>
+      <section id="aboutus"><About /></section>
+      <section><Footer /></section>
 
 
+    </>
+  );
 
-
-
-
-
-
-
-        </>
-    );
 };
 
 export default App;

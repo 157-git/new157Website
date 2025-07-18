@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import "./../styles/Faq.css";
 
@@ -47,7 +48,9 @@ export default function FAQ() {
 
   return (
     <div className="faq-wrapper">
-      <h2 className="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+
+      <h2 className="faq-title">Frequently Asked Questions</h2>
+
       <div className="faq-list">
         {faqData.map((faq, index) => (
           <div key={index} className="faq-item">

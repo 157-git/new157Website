@@ -1,18 +1,10 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #bd5e26;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #924213;
-}
 
+/* ================= Base Styles ================= */
 .faq-wrapper {
   max-width: 1000px;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 20px;
-  background: linear-gradient(49deg,
-        #888787 50%,
-        #bd5e26 50%);
+  background-color: #fbf0e9;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
@@ -20,8 +12,10 @@ body {
 .faq-title {
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
   color: black;
+  letter-spacing: 1px;
 }
 
 .faq-list {
@@ -42,28 +36,30 @@ body {
   align-items: center;
   padding: 15px 20px;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #444;
 }
 
 .faq-question:hover {
-  background-color: #f8f9fa;
+  background-color: #fbf0e9;
 }
 
 .faq-icon {
   font-size: 20px;
   font-weight: bold;
+  color: #8d4217;
   transition: transform 0.2s ease;
+  margin-left: auto; /* keeps icon aligned right */
 }
 
 .faq-answer {
   padding: 15px 20px;
-  background-color: #f8f9fa;
+  background-color: #fbf0e9;
   color: #444;
   border-top: 1px solid #444;
   animation: fadeIn 0.3s ease-in-out;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 @keyframes fadeIn {
@@ -78,22 +74,28 @@ body {
   }
 }
 
-
-/* ========== Responsive Styles ========== */
+/* Large Tablets */
 @media (max-width: 1024px) {
   .faq-title {
-    font-size: 24px;
+    font-size: 1.4rem;
   }
 
   .faq-question {
     padding: 14px 16px;
+    font-size: 0.85rem;
   }
 
   .faq-answer {
     padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+
+  .faq-icon {
+    font-size: 18px;
   }
 }
 
+/* Tablets & Small Screens */
 @media (max-width: 768px) {
   .faq-wrapper {
     padding: 15px;
@@ -101,32 +103,44 @@ body {
   }
 
   .faq-title {
-    font-size: 22px;
-  }
-
-  .faq-icon {
-    font-size: 18px;
+    font-size: 1.3rem;
   }
 
   .faq-question {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 14px;
+    font-size: 0.85rem;
+  }
+
+  .faq-answer {
+    padding: 14px;
+    font-size: 0.8rem;
   }
 }
 
+/* Phones */
 @media (max-width: 480px) {
+  .faq-wrapper {
+    padding: 12px;
+    margin: 25px 8px;
+  }
+
   .faq-title {
-    font-size: 2.5 rem;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
   }
 
   .faq-question {
     padding: 12px 14px;
-    font-size: 15px;
+    font-size: 0.8rem;
   }
 
   .faq-answer {
     padding: 12px 14px;
-    font-size: 14px;
+    font-size: 0.75rem;
+  }
+
+  .faq-icon {
+    font-size: 16px;
   }
 }
+

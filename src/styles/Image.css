@@ -1,8 +1,11 @@
-.test1 {      
-margin: 50px auto;
-/* padding: 20px; */
-height: 80vh;
-background: linear-gradient(43deg,#888787 50%,#bd5e26 50%);
+
+/* Main container */
+.test1 {
+  background-color: #fbf0e9;
+  scroll-margin-top: 100px;
+  padding-bottom: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Heading */
@@ -11,12 +14,12 @@ background: linear-gradient(43deg,#888787 50%,#bd5e26 50%);
   font-size: 1.5rem;
   font-weight: bold;
   color: #070707;
-  background-color: #bd5e26; 
-  padding-top: 25px;
+  padding-top: 40px;
   letter-spacing: 1px;
+  margin-bottom: 40px;
 }
 
-/* Responsive Grid Layout */
+/* Grid Layout */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -26,7 +29,8 @@ background: linear-gradient(43deg,#888787 50%,#bd5e26 50%);
   margin: 0 auto;
 }
 
-/* Card styles */
+
+/* Image Cards */
 .image-card {
   position: relative;
   width: 100%;
@@ -35,100 +39,133 @@ background: linear-gradient(43deg,#888787 50%,#bd5e26 50%);
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  animation: fadeInUp 0.8s ease forwards;
   margin: 0 auto;
 }
 
-/* Rotating image */
+/* Image Styling */
 .image-card img.rotate {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* animation: rotateOneByOne 4s linear infinite; */
 }
 
 /* Overlay */
-.overlay {
+.overlay.full.always-visible {
   position: absolute;
-  bottom: 0;
-  background: #f8f9fa;
-  color: #333;
+  top: 0;
+  left: 0;
+  z-index: 2;
   width: 100%;
-  text-align: center;
-  font-size: 1rem;
-  padding: 10px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Overlay Text */
+.overlay-text {
   transform: translateY(100%);
-  transition: transform 0.4s ease;
+  opacity: 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-.image-card:hover .overlay {
-  transform: translateY(0);
+/* Triggered Animation */
+.overlay-text.scroll-in {
+  animation: scrollUp 1s ease forwards;
 }
 
-/* Animations */
-@keyframes rotateOneByOne {
+/* Animation */
+@keyframes scrollUp {
   0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
+    transform: translateY(100%);
     opacity: 0;
-    transform: translateY(40px);
   }
-
-  to {
+  30% {
     opacity: 1;
-    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 
-/* Tablet */
+/* ========== Responsive ========== */
 @media (max-width: 1024px) {
   .imageheading {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-top: 30px;
     margin-bottom: 16px;
   }
 
   .gallery-grid {
     gap: 30px;
-    padding: 40px 20px;
+    padding: 50px 20px;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .imageheading {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-top: 25px;
     margin-bottom: 14px;
   }
 
   .gallery-grid {
     gap: 20px;
-    padding: 30px 15px;
+    padding: 40px 15px;
   }
 
-  .overlay {
-    font-size: 14px;
+  .overlay-text {
+    font-size: 1rem;
     padding: 8px;
+  }
+
+  .image-card {
+    max-width: 240px;
+    height: 220px;
   }
 }
 
 @media (max-width: 480px) {
   .imageheading {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-top: 20px;
     margin-bottom: 12px;
   }
 
-  .overlay {
-    font-size: 13px;
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 30px 10px;
+  }
+
+  .image-card {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .overlay-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .imageheading {
+    font-size: 1.3rem;
+  }
+
+  .overlay-text {
+    font-size: 0.9rem;
+  }
+
+  .image-card {
+    max-width: 180px;
+    height: 180px;
   }
 }

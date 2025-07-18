@@ -1,10 +1,13 @@
+import React from "react";
 import { useRef } from "react";
 import "../styles/WhyWeAre.css";
-import expertImg from "../assets/whereweare/expert.jpg";
-import scalableImg from "../assets/whereweare/scalable.jpg";
-import clientImg from "../assets/whereweare/client.jpg";
-import agileImg from "../assets/whereweare/agile.jpg";
-import deliveryImg from "../assets/whereweare/delivery.jpg";
+import expertImg from '../assets/whereweare/endtoend.jpg';
+import scalableImg from '../assets/whereweare/scalable.jpg';
+import clientImg from '../assets/whereweare/bulkupload.jpg';
+import agileImg from '../assets/whereweare/rolebased.jpg';
+import autoImg from '../assets/whereweare/client.jpg';
+import secureImg from '../assets/whereweare/secure.jpg';
+import deliveryImg from '../assets/whereweare/perftracking.jpg'
 
 const cardData = [
   {
@@ -33,12 +36,12 @@ const cardData = [
     desc: "Built-in dashboards track:Recruiter logins,Candidate activity,Conversion ratios,Attendance & call logs",
   },
   {
-    image: deliveryImg,
+    image: autoImg,
     title: "Automated Candidate Notifications",
     desc: "Keep candidates engaged and informed at every step — from “Application Received” to “Offer Sent” — with zero manual follow-ups."
   },
   {
-    image: deliveryImg,
+    image: secureImg,
     title: "Secure & Compliant",
     desc: "Role-based access controls,GDPR-friendly data handling,Encrypted document uploads."
   }
@@ -57,9 +60,9 @@ const WhyWeAre = () => {
   };
 
   return (
-    <div className="section section-blue whyweare" id="whyweare">
-      <h2 className="whyweare-title">WHY WE ARE DIFFERENT</h2>
 
+    <section className="section section-blue whyweare" id="WhyUs">
+      <h2 className="whyweare-title">Why We Are Different</h2>
       <div className="whyweare-carousel-wrapper">
         <button className="whyweare-arrow left" onClick={() => scroll("left")}>
           &larr;{/* <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" /></svg> */}
@@ -76,10 +79,12 @@ const WhyWeAre = () => {
         </div>
 
         <button className="whyweare-arrow right" onClick={() => scroll("right")}>
-          &rarr;{/* <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" /></svg> */}
+
+          &rarr;
         </button>
       </div>
-    </div>
+    </section>
+
   );
 };
 

@@ -1,3 +1,4 @@
+import React from "react";
 import "../styles/BuildFor.css";
 
 const BuildFor = () => {
@@ -11,8 +12,9 @@ const BuildFor = () => {
   ];
 
   return (
-    <div className="section buildfor" id="buildfor">
-      <h2 className="buildfor-title">WE BUILD FOR</h2>
+
+    <section id="WhoWeServe" className="section buildfor" >
+      <h2 className="buildfor-title">We Build For</h2>
       <div className="buildfor-scroll-wrapper">
         <div className="buildfor-scroll-track">
           {cardItems.map((item, index) => (
@@ -28,7 +30,9 @@ const BuildFor = () => {
           ))}
         </div>
       </div>
-    </div>
+
+    </section>
+
   );
 };
 

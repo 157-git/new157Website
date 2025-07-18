@@ -1,88 +1,77 @@
-/* Root section */
+
+/* === Features Section Base === */
 .features {
   padding: 3rem 1rem;
-  background: linear-gradient(45deg,
-        #888787 50%,
-        #bd5e26 50%);
-margin: 50px auto;
+  background-color: #fbf0e9;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
 .features h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 40px;
   font-size: 1.5rem;
   font-weight: bold;
   color: black;
-
+  letter-spacing: 1px;
 }
 
-/* Scroll Container */
+/* === Scroll Container === */
 .scrollcontainer {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 12px;
   margin: 0 auto 2rem;
-  max-width: 1200px;
+  max-width: 100%;
   padding: 0 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-/* Scroll Buttons */
-.scroll-btn,
+/* === Scroll Buttons === */
 .scrollbutton {
   background-color: #4c5a67;
   color: white;
   border: none;
-  padding: 10px 10px;
+  padding: 10px;
   font-size: 20px;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
 }
 
-
-.scroll-btn:hover,
 .scrollbutton:hover {
   background-color: #924213;
 }
 
-/* Icon List Container */
+
+/* === Icon List === */
+
 .icon-list {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 20px;
+  gap: 23px;
   padding: 1rem 0;
   scrollbar-width: none;
-
+  scroll-padding: 100px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-right: 10px;
 }
 
-/* Single Icon Item */
-.iconitem {
-  /* min-width: 200px;
-  max-width: 200px;
-  background: transparent; */
-  /* border: 2px solid #4c5a67; */
-  /* border-radius: 10px;
-  text-align: center;
-  font-size: 0.75rem; */
-  /* padding: 1rem 1rem 0.5rem 1rem; */
-  /* cursor: pointer;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  color: #333;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  word-break: break-word;
-  overflow-wrap: break-word; */
-  /* white-space: normal; */
+.icon-list::-webkit-scrollbar {
+  display: none;
+}
 
-   min-width: 200px;
+/* === Icon Card === */
+.iconitem {
+  min-width: 200px;
   max-width: 200px;
-  height: 200px; /* ✅ This is the key line */
-  background: transparent;
+  height: 200px;
   border-radius: 10px;
-  text-align: center;
   font-size: 0.75rem;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -94,108 +83,28 @@ margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
-}
-
-.icon-list::-webkit-scrollbar {
-  display: none;
+  box-sizing: border-box;
 }
 
 .iconitem:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.05);
   background-color: #f7f7f7;
 }
 
-.iconitem p {
-  margin-top: 0.5rem;
-  font-weight: 500;
-  color: #333;
-  line-height: 1.4;
-  word-break: break-word;
-  white-space: normal;
+.iconitem.selected {
+  transform: scale(1.05);
+  z-index: 5;
+  margin-right: -10px;
 }
 
-/* Spinner (on hover) */
-.spinnerborder {
-  width: 2rem;
-  height: 2rem;
-  border: 0.25rem solid #ccc;
-  border-top-color: #007bff;
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
-  margin: 0 auto;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Bounce Animation */
-@keyframes bounce {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* Video and Info Section */
-.videoinfocontainer {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.alignitemscenter {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* Video */
-.video {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Info Text */
-.info {
-  flex: 1;
-}
-
-.info h4 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #0a0a0a;
-
-}
-
-.info p {
-  font-size: 0.75rem;
-  line-height: 1.6;
-  color: #1b1a1a;
-}
-
+/* === Card Inner Elements === */
 .feature-icon {
- position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ✅ Ensures it fills while maintaining aspect ratio */
-  z-index: 1;
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -211,60 +120,197 @@ margin: 50px auto;
   width: 100%;
   z-index: 2;
   background: rgba(0, 0, 0, 0.4);
-  color:white;
+  color: white;
   font-size: 0.85rem;
   font-weight: 600;
   text-align: center;
   padding: 8px;
-  box-shadow: #130f0f;
+  transition: all 0.3s ease;
 }
 
+/* === Selected Card Label === */
+.iconitem.selected .feature-label {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  z-index: 2;
+}
 
-/* Responsive Breakpoints */
+/* === Video & Description Container === */
+.videoinfocontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
 
+.alignitemscenter {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-video {
+  flex: 0 0 60%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.feature-description {
+  flex: 0 0 35%;
+  padding: 1rem;
+  text-align: left;
+}
+
+.feature-description h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+}
+
+.feature-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1b1a1a;
+}
+
+/* === Responsive Fixes === */
 @media (max-width: 1024px) {
   .scrollcontainer {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .scroll-btn,
   .scrollbutton {
     display: none;
   }
+
+  .alignitemscenter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-video,
+  .feature-description {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .feature-description {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .feature-description h4,
+  .feature-description p {
+    text-align: center;
+  }
+
 }
 
 @media (max-width: 768px) {
   .iconitem {
     min-width: 160px;
-    padding: 1rem;
   }
 
-  .info h4 {
-    font-size: 20px;
-    text-align: center;
+  .features h2 {
+    font-size: 1.4rem;
   }
 
-  .info p {
-    text-align: center;
+  .videoinfocontainer {
+    padding: 1.5rem 1rem;
   }
 
   .alignitemscenter {
-    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .feature-description h4 {
+    font-size: 1.3rem;
+  }
+
+  .feature-description p {
+    font-size: 0.95rem;
+
   }
 }
 
 @media (max-width: 480px) {
-  .features h2 {
-    font-size: 1.6rem;
+  .features {
+    padding: 2rem 0.5rem;
   }
 
   .iconitem {
-    min-width: 140px;
-    font-size: 14px;
+    min-width: 130px;
+    height: 180px;
+    font-size: 13px;
+    margin: 0 auto;
   }
 
-  .scrollcontainer {
-    padding: 0;
+  .videoinfocontainer {
+    padding: 1rem 0.5rem;
+  }
+
+  .alignitemscenter {
+    gap: 1rem;
+  }
+
+  .feature-description h4 {
+    font-size: 1.2rem;
+  }
+
+  .feature-description p {
+    font-size: 0.9rem;
   }
 }
+
+@media (max-width: 360px) {
+  .features {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .features h2 {
+    font-size: 1.3rem;
+  }
+
+  .iconitem {
+    min-width: 120px;
+    height: 170px;
+  }
+
+  .feature-description h4 {
+    font-size: 1.1rem;
+  }
+
+  .feature-description p {
+    font-size: 0.85rem;
+  }
+}
+
+/* === Global Overflow Prevention === */
+html, body, #root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+

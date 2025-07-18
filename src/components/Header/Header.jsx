@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import "../../styles/Header.css";
-import rgLogo from '../../assets/logo/rgLogo.png'
+import rgLogo from '../../assets/logo/rgLogo.png';
+
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,32 +11,63 @@ export default function Header() {
   const handleNavClick = (section) => {
     setActiveSection(section);
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false); // Close menu on mobile after click
   };
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            setActiveSection(id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Section becomes active when 50% visible
+      }
+    );
+
+    sections.forEach((section) => {
+      if (section.id) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section.id) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
 
   return (
     <nav className="header">
-      {/* Left: Logo + Title */}
+      {/* Logo and Title */}
       <div className="header-title">
-        <img
-          src={rgLogo}
-          alt="Logo"
-          className="site-logo"
-        />
+        <img src={rgLogo} alt="Logo" className="site-logo" />
         <div className="title-text">
-          <a className="home" href="#home">157 Industries</a>
-          <h6 className="subtitle">Symbol Of Uniqueness</h6>
+          <a className="home" href="#home">Recruiter's Gear</a>
         </div>
       </div>
 
-      {/* Toggle Button (Visible on Mobile) */}
+      {/* Mobile Toggle */}
+
       <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </div>
 
-      {/* Right: Nav Items */}
+
+      {/* Navigation Links */}
       <div className={`nav-wrapper ${menuOpen ? 'open' : ''}`}>
         <ul className="navbar">
-          {["home", "features", "buildfor", "whyweare", "about", "footer"].map((section) => (
+          {["home", "features", "WhoWeServe", "WhyUs", "about", "contact"].map((section) => (
             <li className="navitem" key={section}>
               <button
                 className={`navlink ${activeSection === section ? "active" : ""}`}

@@ -1,6 +1,9 @@
+import React from "react";
 import { useState } from "react";
 import "../styles/DemoForm.css";
-import demoImg from '../assets/demo/demo.jpg';
+
+import demoImg from '../assets/demo/demo.png';
+
 import axios from "axios";
 
 export default function DemoForm() {
@@ -8,7 +11,7 @@ export default function DemoForm() {
     name: "",
     contact: "",
     email: "",
-    demo_date: "",
+    date: "",
     address: "",
   });
 
@@ -19,7 +22,8 @@ export default function DemoForm() {
     e.preventDefault();
     // console.log("Submitted Form Data:", formData);
     try {
-      axios.post("http://localhost:8080/api/send-email", formData);
+      axios.post("http://192.168.1.50:9090/api/ats/157industries/sendDemoMail", formData);
+
       alert("Demo booked and email sent to the company!");
     } catch (error) {
       console.error(error);
@@ -29,7 +33,7 @@ export default function DemoForm() {
       name: "",
       contact: "",
       email: "",
-      demo_date: "",
+      date: "",
       address: "",
     });
   };
@@ -69,8 +73,8 @@ export default function DemoForm() {
             />
             <input
               type="date"
-              name="demo_date"
-              value={formData.demo_date}
+              name="date"
+              value={formData.date}
               onChange={handleChange}
               required
             />
