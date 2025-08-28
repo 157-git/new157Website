@@ -1,5 +1,10 @@
 import React from "react";
 import ".././styles/About.css";
+import ameet from '../assets/aboutTeam/ameet.jpg';
+import nikita from '../assets/aboutTeam/nikita.jpg';
+import samrudhhi from '../assets/aboutTeam/samrudhhi.jpg';
+import sakshi from '../assets/aboutTeam/sakshi.jpg';
+
 
 
 export default function About() {
@@ -10,14 +15,22 @@ export default function About() {
       <div className="team-container">
         {/* Left: Executive */}
         <div className="team-left">
-          <img
+          <img id="founder1"
             src="https://randomuser.me/api/portraits/men/32.jpg"
             alt="Executive Director"
             className="executive-img"
           />
           <h4 className="executive-title">FOUNDER</h4>
           <p className="executive-name">Ajinkya</p>
+           <img id="founder2"
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Executive Director"
+            className="executive-img"
+          />
+          <h4 className="executive-title">FOUNDER</h4>
+          <p className="executive-name">Ashok</p>
         </div>
+        
 
         {/* Vertical Line */}
         <div className="vertical-divider"></div>
@@ -26,34 +39,39 @@ export default function About() {
         <div className="team-right">
           {[
             {
-              role: "Full stack developer",
-              name: "Sahil",
-              img: "https://randomuser.me/api/portraits/men/45.jpg",
+              role: "Recruitment HR",
+              name: "Aditi",
+              img: "https://randomuser.me/api/portraits/women/49.jpg",
             },
             {
               role: "Software Tester",
-              name: "Ameet",
-              img: "https://randomuser.me/api/portraits/men/47.jpg",
+              name: "Ameet Singh",
+              img: ameet,
             },
             {
               role: "Java Developer Intern",
-              name: "Sanskruti",
-              img: "https://randomuser.me/api/portraits/women/48.jpg",
+              name: "Sakshi Kashid",
+              img: sakshi,
             },
             {
               role: "Java Developer Intern",
-              name: "Nikita",
-              img: "https://randomuser.me/api/portraits/women/48.jpg",
+              name: "Nikita Shirsath",
+              img: nikita,
             },
             {
               role: "Java Developer Intern",
-              name: "Sakshi",
-              img: "https://randomuser.me/api/portraits/women/48.jpg",
+              name: "Samruddhi Patole",
+              img: samrudhhi,
             },
             {
-              role: "Recruitment",
-              name: "Aditi",
-              img: "https://randomuser.me/api/portraits/women/49.jpg",
+              role: "Full Stack Developer",
+              name: "Aarshad",
+              img: "https://randomuser.me/api/portraits/men/32.jpg",
+            },
+            {
+              role: "Full Stack Developer",
+              name: "Sahil",
+              img: "https://randomuser.me/api/portraits/men/32.jpg",
             },
           ].map((member, index) => (
             <div key={index} className="team-card">

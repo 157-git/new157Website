@@ -15,6 +15,7 @@
   font-weight: bold;
   color: black;
   letter-spacing: 1px;
+  
 }
 
 /* === Scroll Container === */
@@ -180,6 +181,7 @@
   flex: 0 0 35%;
   padding: 1rem;
   text-align: left;
+  white-space: pre-line;
 }
 
 .feature-description h4 {
@@ -220,11 +222,13 @@
   .feature-description {
     text-align: center;
     padding-left: 0;
+    
   }
 
   .feature-description h4,
   .feature-description p {
     text-align: center;
+    white-space: pre-line;
   }
 
 }

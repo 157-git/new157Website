@@ -14,17 +14,89 @@ import candidatenotify from '../assets/features/candidatenotificationsystem.jpg'
 import activeinactive from '../assets/features/applicantform.jpg';
 
 const techList = [
-  { icon: bulkresume, label: "Bulk Resume Upload", video: "https://www.youtube.com/embed/dQw4w9WgXcQ", description: "Upload hundreds of resumes..." },
-  { icon: bulkexcel, label: "Bulk Excel Upload", video: "https://www.youtube.com/embed/3fumBcKC6RE", description: "Seamlessly import structured..." },
-  { icon: resumeparsing, label: "Resume Parsing", video: "https://www.youtube.com/embed/Z1BCujX3pw8", description: "Automatically extract..." },
-  { icon: distancecal, label: "Distance Calculator", video: "https://www.youtube.com/embed/_JtPf8vL1w4", description: "Calculate the commute distance..." },
+  {
+    icon: bulkresume, label: "Bulk Resume Upload",
+    video: "https://www.youtube.com/embed/amWwcwBYV24",
+    description: "In this video, we walk you through how recruiters and HR teams can quickly upload multiple resumes at once, saving valuable time in the hiring process. With this module, you can\n"
+    +"✅ Upload multiple resumes in a single step\n" +
+     "✅ Automatically organize and process candidate profiles\n" + 
+     "✅ Reduce manual effort and speed up shortlisting" },
+  {
+    icon: bulkexcel, label: "Bulk Excel Upload",
+    video: "https://www.youtube.com/embed/Vi5C4n1kAFk",
+    description: "Easily manage and upload large amounts of data with our Bulk Excel Upload Module.🚀\n"+
+      "✅ Upload multiple entries in one go\n"+
+      "✅ Ensure accuracy with automated validation\n"+
+      "✅ Improve efficiency for your business operations"
+  },
+  {
+    icon: resumeparsing, label: "Resume Parsing",
+    video: "https://www.youtube.com/embed/-2eQzFYjZF0",
+    description: "In this video, I showcase the Resume Parsing module that I developed, which automatically extracts key information such as name, contact details, skills, education, and experience from resumes." +
+      "This feature helps streamline the recruitment process by converting unstructured CV data into a structured format, " +
+      "making it easier for HR teams and recruiters to filter and analyze candidate information.\n"+
+    "✅ Automatic extraction of resume data\n"+
+    "✅ Supports multiple formats (PDF/DOCX)\n"+
+    "✅ Structured output for easy integration\n"+
+    "✅ Time-saving solution for recruiters & HR"
+    
+  },
+  {
+    icon: distancecal, label: "Distance Calculator",
+    video: "https://www.youtube.com/embed/M5dSUVw5hb8",
+    description: "This feature calculates the distance between a client’s job location (JD) and a candidate’s location, helping recruiters and hiring teams make better decisions based on proximity\n"+
+    "✅ Calculates distance between Client JD location and Candidate location\n"+
+    "✅ Helps recruiters in location-based candidate shortlisting"
+  },
   { icon: salaryhike, label: "Salary Hike Calculator", video: "https://www.youtube.com/embed/tgbNymZ7vqY", description: "Auto-calculate expected hike..." },
-  { icon: jd, label: "JD Creation", video: "https://www.youtube.com/embed/fLexgOxsZu0", description: "Build ATS-optimized job descriptions..." },
-  { icon: recruiterperform, label: "Performance & Attendance", video: "https://www.youtube.com/embed/K4TOrB7at0Y", description: "Track team activities..." },
+  {
+    icon: jd, label: "JD Creation",
+    video: "https://www.youtube.com/embed/clnhwsMPU0Y",
+    description: "🚀 In this video, I’ll walk you through the Job Description Module of our project.\n"+
+                  "This feature allows you to:\n"+
+                  "✅ Add a new Job Description with ease\n"+
+                  "✅ View all Job Descriptions in a clear, structured format\n" +
+                  "✅ Share Job Descriptions in different formats\n"+
+                  "✅ Manage job-related details in one place"
+  },
+  {
+    icon: recruiterperform, label: "Performance & Attendance",
+    video: "https://www.youtube.com/embed/bT9AYgGqg1U", 
+    description: "🚀 In this video, I walk you through the Performance and Attendance Module of our system.\n"+
+"This module is designed to make it easy to track employee performance, monitor attendance, and generate insights that help improve productivity and efficiency across the team."+
+
+"✨ Key Features Covered in the Video:\n"+
+
+"✅ Performance tracking for individual team members\n"+
+
+"✅ Attendance monitoring and reporting\n"+
+
+"✅ Dashboard with real-time insights\n"+
+
+"✅ User-friendly interface for managers and employees"
+  },
   { icon: applicantform, label: "Applicant Form", video: "https://www.youtube.com/embed/60ItHLz5WEA", description: "Dynamic form for collecting..." },
-  { icon: multicolor, label: "Color Themes", video: "https://www.youtube.com/embed/yPYZpwSpKmA", description: "Theme customization for comfort..." },
+  {
+    icon: multicolor, label: "Color Themes",
+    video: "https://www.youtube.com/embed/wwOAb7dzaBE",
+    description: "🎨 In this video, I’ll show you how to use Color Themes in your project/module to make your application look more professional,"+
+    " user- friendly, and customizable.You’ll learn how to switch between different themes,"+
+      " apply consistent styles, and create a smooth user experience with color variations.\n" +
+    "✅ Switching between light/dark modes (and more!)\n"+
+    "✅ Best practices for UI/UX with themes"
+  },
   { icon: candidatenotify, label: "Notification System", video: "https://www.youtube.com/embed/IcrbM1l_BoI", description: "Keep candidates informed..." },
-  { icon: activeinactive, label: "Active/Inactive Members", video: "https://www.youtube.com/embed/Pkh8UtuejGw", description: "Manage team activity status..." },
+  {
+    icon: activeinactive, label: "Active/Inactive Members",
+    video: "https://www.youtube.com/embed/z6QEWOkXfCQ",
+    description: "Team Activity Status Management Module designed to help track and manage team performance in real-time. This feature allows managers and team leads to monitor activities,"+
+      " update statuses, and ensure smooth collaboration within a project.\n" +
+   "✅ Real-time tracking of team activity status\n"+
+
+"✅ Easy monitoring of individual and team progress\n"+
+
+"✅ Supports better team collaboration and productivity"
+  },
 ];
 
 export default function Features() {

@@ -172,8 +172,8 @@
     padding: 5rem 1rem 1.5rem;
     min-height: auto;
     background-image: linear-gradient(-55.2deg,
-        #fbf0e9 46%,
-        #8d4217 49.8%,
+        #fbf0e9 48.5%,
+        #8d4217 20%,
         white 54%),
       linear-gradient(-55.2deg, #000000, #000000);
     background-size: 100% 100%, 2px 100%;
@@ -224,8 +224,8 @@
     padding-right: 1rem;
     min-height: auto;
     background-image: linear-gradient(-55.2deg,
-        #fbf0e9 43%,
-        #8d4217 48%,
+        #fbf0e9 52%,
+        #8d4217 53%,
         white 54%),
       linear-gradient(-55.2deg, #000000, #000000);
   }
